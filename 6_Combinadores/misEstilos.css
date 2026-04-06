@@ -1,0 +1,15 @@
+div p{
+    color: cyan;
+}
+
+ol > li{
+    font-weight: bolder;
+}
+
+h2 ~ h3{
+    background-color: aliceblue;
+
+}
+
+
+
