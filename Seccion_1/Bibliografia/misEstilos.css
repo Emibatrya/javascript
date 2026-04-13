@@ -1,0 +1,49 @@
+body{
+
+    background-color: rgb(186, 180, 180);
+}
+.Hola{
+
+    background-color: antiquewhite;    
+    
+}
+
+.Adios{
+
+    color: rgb(216, 209, 193);
+    background-color: rgb(131, 131, 131);
+    margin-right: 45%;
+}
+
+.Datos{
+
+    background-color: rgb(255, 255, 253);
+    margin-right: 35%;
+}
+
+#Links{
+
+    text-align: center;
+}
+#Links2{
+    text-align: center;
+}
+#Links3{
+
+    text-align: center;
+}
+
+.Inicio{
+
+    background-color: beige;
+    margin-right: 89%;
+}
+
+.Datos_secundarios{
+
+    background-color: bisque;
+
+    color: rgb(0, 0, 0);
+
+    margin-right: 94%;
+}
