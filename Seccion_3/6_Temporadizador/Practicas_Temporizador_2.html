@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Practica de temporizador 2</title>
+</head>
+
+<body>
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <h1 id="textoAlarma" style="color: rgb(17, 0, 255);">EMPIEZA LA CUENTA REGRESIVA </h1>
+
+    <script>
+        let elementoAlarma = document.getElementById("tiempoElegido");
+        let elementoTexto = document.getElementById("textoAlarma")
+
+        function comenzarTiempo() {
+            setTimeout(tiempoCumplido, 1000 * elementoAlarma.value);
+        }
+
+        function tiempoCumplido() {
+       elementoTexto.textContent = "SE ACABO EL TIEMPO";
+       elementoTexto.style.color = "red"
+
+        }
+    </script>
+</body>
+
+</html>
