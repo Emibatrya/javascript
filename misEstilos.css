@@ -1,0 +1,28 @@
+body {
+
+    background-color: antiquewhite;
+}
+h1{
+
+    color: rgb(0, 0, 0);
+}
+
+h2{
+
+    color: rgb(252, 252, 252);
+    background-color: rgb(40, 126, 197); 
+    font-size: x-large;
+    width: 200px;
+}
+
+button{
+
+    background-color: aqua;
+    color: black;
+}
+
+input {
+
+    color: black;
+    background-color: aliceblue;
+}

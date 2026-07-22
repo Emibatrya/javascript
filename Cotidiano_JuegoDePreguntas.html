@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Cotidiano Juego de preguntas</title>
+    <link rel="stylesheet" href="misEstilos.css">
+    <style>
+        #contador {
+            font-size: 1em;
+            margin: 10px;
+
+
+        }
+
+        button {
+            font-size: 1em;
+            padding: 30px;
+            margin: 5px;
+
+        }
+
+        input {
+
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body onload="ComenzarTiempo()">
+    <H1>Responde las preguntas lo mas rapido que puedas
+        <div id="contador">30</div>
+        <script>
+            let tiempo = 30;
+            let intervalo
+
+            function ComenzarTiempo() {
+                if (!intervalo) {
+
+                    intervalo = setInterval(restador, 1000);
+
+                }
+            }
+
+
+            function actualizarContador() {
+                document.getElementById("contador").textContent = tiempo;
+
+            }
+
+            function restador() {
+                if (tiempo > 0) {
+                    tiempo--;
+                    actualizarContador();
+
+                } else {
+                    (tiempo = 0)
+                    alert("Se le acabo el tiempo");
+                }
+            }
+
+
+        </script>
+    </h1>
+
+    <p>
+    <h2>1. Cuanto es 1+1</b> </h2>
+    </p>
+    <input type="text" id="Pregunta_1">
+
+    <p>
+    <h2><b>2. Cuanto es 2+1</b> </h2>
+    </p>
+    <input type="text" id="Pregunta_2">
+
+    <p>
+    <h2>3. Cuanto es 3+1</b> </h2>
+    </p>
+    <input type="text" id="Pregunta_3">
+
+    <p>
+    <h2>4. Cuanto es 4+1</b> </h2>
+    </p>
+    <input type="text" id="Pregunta_4">
+
+    <p>
+    <h2>5. Cuanto es 5+1</b> </h2>
+    </p>
+    <input type="text" id="Pregunta_5">
+
+
+
+    <h1><button onclick="Enviarrespuestas()">Termine</button></h1>
+
+    <h1><button onclick="reiniciarJuego()">Volver a intentarlo</button></h1>
+
+    <script>
+
+        function Enviarrespuestas() {
+
+            let Pregunta1 = document.getElementById("Pregunta_1")
+
+
+            let Pregunta2 = document.getElementById("Pregunta_2")
+
+
+            let Pregunta3 = document.getElementById("Pregunta_3")
+
+
+            let Pregunta4 = document.getElementById("Pregunta_4")
+
+
+            let Pregunta5 = document.getElementById("Pregunta_5")
+
+            alert ("22/07/2026"
+                + Pregunta1.value +"\n"
+
+                + Pregunta2.value +"\n"
+
+                + Pregunta3.value +"\n"
+
+                + Pregunta4.value +"\n"
+
+                + Pregunta5.value +"\n"
+            )
+
+        }
+
+        function reiniciarJuego() {
+
+            location.reload(); 
+            alert ("Se reiniciara la pagina")
+        }
+    </script>
+
+</body>
+
+</html>
