@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Practica de parametros 1</title>
+</head>
+<body>
+    <input type="number" id="numero1">
+    <input type="number" id="numero2">
+
+    <button onclick="calculo()">Sumar estos numeros</button>
+
+    <script>
+
+        function suma(numero1, numero2){
+
+            resultado = numero1 + numero2 
+            return resultado;
+        }
+
+        function calculo(){
+
+            let Suma1 = parseInt (document.getElementById("numero1").value);
+            let Suma2 = parseInt (document.getElementById("numero2").value);
+            let sumaFinal = suma(Suma1, Suma2);
+
+            alert(sumaFinal);
+        }
+    </script>
+</body>
+</html>
