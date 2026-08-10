@@ -2,38 +2,252 @@
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="misEstilos.css">
     <title>Calculadora</title>
 
-<style>
-    div{
+    <style>
+        p {
 
-        text-align: justify right;
-    }
-</style>
+            text-align: center;
+            margin: 15px;
+        }
+
+        h1 {
+
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Calculadora</h1>
-    <input type="number" id="numero1">
 
-    <input type="number" id="numero1">
+    <p>
+        <input type="number" id="numero1">
 
-    <div> <button onclick="suma()">+</button> </div>
+        <input type="number" id="numero2">
 
-    <div> <button onclick="resta()">-</button> </div>
+    </p>
 
-    <div> <button onclick="multiplicacion()">x</button> </div>
+    <p>
 
-    <div> <button onclick="division()">/</button> </div>
+        <button onclick="suma()">+</button>
 
-    <div> <button onclick="raizCuadrada()">raiz</button> </div>
+        <button onclick="resta()">-</button>
 
-    <div> <button onclick="potenciar()">potencia</button> </div>
+        <button onclick="multiplicacion()">x</button>
 
-    <div> <button onclick="absoluto()">absoluto</button> </div>
+        <button onclick="division()">/</button>
 
-    <div> <button onclick="numRandom()">random</button> </div>
+    </p>
+
+    <p>
+
+        <button onclick="raizCuadrada()">raiz</button>
+
+        <button onclick="potenciar()">potencia</button>
+
+        <button onclick="absoluto()">absoluto</button>
+
+        <button onclick="numRandom()">random</button>
+
+    </p>
+
+    <h1> Resultado:
+        <p id="resultadoOperacion">____</p>
+    </h1>
+
+    <p>
+
+        <button onclick="redondearSig()">round</button>
+        <button onclick="redondearAtras()">floor</button>
+        <button onclick="RedondearAdelante()">ceil</button>
+
+    </p>
+
+    <script>
+
+        function calculo(numero1, numero2) {
+
+            resultado = numero1 + numero2
+
+            return resultado;
+        }
+
+        function suma() {
+
+            let Suma1 = parseFloat(document.getElementById("numero1").value);
+
+            let Suma2 = parseFloat(document.getElementById("numero2").value);
+
+            let resultado = calculo(Suma1, Suma2);
+
+            document.getElementById("resultadoOperacion").textContent = resultado;
+        }
+
+
+
+        function CalcResta(numero1, numero2) {
+
+            resultadoresta = numero1 - numero2
+
+            return resultadoresta;
+
+        }
+
+        function resta() {
+
+            let resta1 = parseFloat(document.getElementById("numero1").value);
+
+            let resta2 = parseFloat(document.getElementById("numero2").value);
+
+            let resultado = CalcResta(resta1, resta2);
+
+            document.getElementById("resultadoOperacion").textContent = resultado;
+        }
+
+        function CalcMultiplicacion(numero1, numero2) {
+
+            resultadoMultiplicacion = numero1 * numero2
+
+            return resultadoMultiplicacion;
+        }
+
+        function multiplicacion() {
+
+            let multiplicacion1 = parseFloat(document.getElementById("numero1").value);
+
+            let multiplicacion2 = parseFloat(document.getElementById("numero2").value);
+
+            let resultado = CalcMultiplicacion(multiplicacion1, multiplicacion2);
+
+            document.getElementById("resultadoOperacion").textContent = resultado;
+
+        }
+
+        function CalcDivision(numero1, numero2) {
+
+            resultado = numero1 / numero2
+
+            return resultado;
+        }
+
+        function division() {
+
+            let division1 = parseFloat(document.getElementById("numero1").value);
+
+            let division2 = parseFloat(document.getElementById("numero2").value);
+
+            let resultado = CalcDivision(division1, division2);
+
+            document.getElementById("resultadoOperacion").textContent = resultado;
+
+        }
+
+        function CalcRaiz(numero1) {
+
+            resultadoRaiz = Math.sqrt(numero1)
+
+            return resultadoRaiz;
+
+        }
+
+        function raizCuadrada() {
+
+            let raiz1 = parseFloat(document.getElementById("numero1").value);
+
+            let resultado = CalcRaiz(raiz1)
+
+            document.getElementById("resultadoOperacion").textContent = resultado;
+        }
+
+        function CalcPotencia(numero1, numero2) {
+
+            resultadoPotencia = Math.pow(numero1, numero2)
+
+            return resultadoPotencia;
+        }
+
+        function potenciar() {
+
+            let potencia1 = parseFloat(document.getElementById("numero1").value);
+
+            let potencia2 = parseFloat(document.getElementById("numero2").value);
+
+            let resultado = CalcPotencia(potencia1, potencia2);
+
+            document.getElementById("resultadoOperacion").textContent = resultado;
+
+        }
+
+        function CalcAbsoluto(numero1, numero2) {
+
+            resultadoAbsoluto = Math.abs(numero1, numero2)
+
+            return resultadoAbsoluto;
+        }
+
+        function absoluto() {
+
+            let absoluto1 = parseFloat(document.getElementById("numero1").value);
+
+            let absoluto2 = parseFloat(document.getElementById("numero2").value);
+
+            let resultado = CalcAbsoluto(absoluto1, absoluto2);
+
+            document.getElementById("resultadoOperacion").textContent = resultado;
+
+        }
+
+        function CalcRandom(numero1, numero2) {
+
+            resultadoRandom = Math.random(numero1, numero2)
+
+            return resultadoRandom;
+        }
+
+        function numRandom() {
+
+            let random1 = parseFloat(document.getElementById("numero1").value);
+
+            let random2 = parseFloat(document.getElementById("numero2").value);
+
+            let resultado = CalcRandom(random1, random2);
+
+            document.getElementById("resultadoOperacion").textContent = resultado;
+
+        }
+
+        function redondearSig() {
+
+            let redondear = Math.round(resultado)
+
+            document.getElementById("resultadoOperacion").textContent = redondear;
+
+
+        }
+
+        function redondearAtras() {
+
+            let redondearAtrass = Math.floor(resultado)
+
+            document.getElementById("resultadoOperacion").textContent = redondearAtrass;
+
+
+        }
+
+        function RedondearAdelante() {
+
+            let redondearAdelantee = Math.ceil(resultado)
+
+            document.getElementById("resultadoOperacion").textContent = redondearAdelantee;
+
+
+        }
+
+
+    </script>
 </body>
 
 </html>
