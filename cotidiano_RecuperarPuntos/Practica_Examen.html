@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+    <title>Practica de Examen</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Indiquenos su presupuesto</h1>
+    <div class="formulario">
+        <p><label for="presupuesto">Ingresa tu presupuesto:</label></p>
+        <p><input type="number" id="presupuesto"></p>
+
+        <p><label for="numeroPersonas">Número de personas:</label></p>
+        <p><input type="number" id="numeroPersonas" class="numPerso"></p>
+
+        <p><label for="actividad">Elige una actividad:</label></p>
+        <p>
+            <select id="actividad">
+                <option value="deportes">Deportes</option>
+                <option value="entretenimiento">Entretenimiento</option>
+                <option value="turismo">Turismo</option>
+                <option value="actividades familiares">Actividades familiares</option>
+            </select>
+        </p>
+
+        <p><button id="descubriractividad">Descubra su actividad</button></p>
+        <p><button id="reinicio" class="botonreiniciar">Reiniciar</button></p>
+
+        <p id="resultado" class="respuesta"></p>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+
+</html>

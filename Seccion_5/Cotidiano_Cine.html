@@ -1,0 +1,174 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendador de Películas</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .contenedor {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            color: #555555;
+        }
+        input, select {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+        }
+        input:focus, select:focus {
+            border-color: #3498db;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .btn-secundario {
+            background-color: #e74c3c;
+        }
+        .btn-secundario:hover {
+            background-color: #c0392b;
+        }
+        #resultado {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Recomendador de Películas</h1>
+        
+        <div class="formulario">
+            <label for="edad">Ingresa tu edad:</label>
+            <input type="number" id="edad" placeholder="Ej. 15" min="0">
+
+            <label for="genero">Elige un género:</label>
+            <select id="genero">
+                <option value="Drama">Drama</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Musical">Musical</option>
+                <option value="Crimen">Crimen</option>
+            </select>
+
+            <button id="btnRecomendar">Obtener Recomendación</button>
+            <button id="btnReiniciar" class="btn-secundario">Reiniciar</button>
+        </div>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        document.getElementById("btnRecomendar").addEventListener("click", function() {
+            let edadInput = document.getElementById("edad").value;
+            let genero = document.getElementById("genero").value;
+            let resultadoHTML = document.getElementById("resultado");
+
+            if (edadInput === "") {
+                resultadoHTML.style.color = "red";
+                resultadoHTML.innerText = "Por favor, ingresa tu edad antes de continuar.";
+                return;
+            }
+
+            let edad = parseInt(edadInput);
+            let peliculaRecomendada = "";
+
+            switch (genero) {
+                case "Drama":
+                    if (edad < 13) {
+                        peliculaRecomendada = "Casablanca";
+                    } else if (edad >= 13 && edad <= 15) {
+                        peliculaRecomendada = "The Shawshank Redemption";
+                    } else {
+                        peliculaRecomendada = "Taxi Driver";
+                    }
+                    break;
+
+                case "Comedia":
+                    if (edad < 13) {
+                        peliculaRecomendada = "Back to the Future";
+                    } else if (edad >= 13 && edad <= 15) {
+                        peliculaRecomendada = "The Truman Show";
+                    } else {
+                        peliculaRecomendada = "The Wolf of Wall Street";
+                    }
+                    break;
+
+                case "Musical":
+                    if (edad < 13) {
+                        peliculaRecomendada = "La La Land";
+                    } else if (edad >= 13 && edad <= 15) {
+                        peliculaRecomendada = "Les Misérables";
+                    } else {
+                        peliculaRecomendada = "The Rocky Horror Picture Show";
+                    }
+                    break;
+
+                case "Crimen":
+                    if (edad < 13) {
+                        peliculaRecomendada = "No hay opciones para esta edad";
+                    } else if (edad >= 13 && edad <= 15) {
+                        peliculaRecomendada = "El Secreto de sus Ojos";
+                    } else {
+                        peliculaRecomendada = "The Godfather";
+                    }
+                    break;
+
+                default:
+                    peliculaRecomendada = "Género no válido";
+            }
+
+            resultadoHTML.style.color = "#2c3e50";
+            resultadoHTML.innerText = "Película recomendada: " + peliculaRecomendada;
+        });
+
+        document.getElementById("btnReiniciar").addEventListener("click", function() {
+            document.getElementById("edad").value = "";
+            document.getElementById("genero").selectedIndex = 0;
+            document.getElementById("resultado").innerText = "";
+        });
+    </script>
+</body>
+</html>
